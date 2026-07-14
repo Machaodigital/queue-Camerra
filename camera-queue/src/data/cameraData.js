@@ -1,0 +1,60 @@
+const cameras = [
+  {
+    id:1,
+    name:"Canon IXY 10S",
+    image:"/images/ixy10s.png",
+    booked:[5,10,15,20],
+    className:"ixy10s"
+  },
+
+  {
+    id:2,
+    name:"Canon IXY 30S",
+    image:"/images/ixy30s.png",
+    booked:[3,8,18,25],
+    className:"ixy30s"
+  },
+
+  {
+    id:3,
+    name:"Canon IXY 31S",
+    image:"/images/ixy31s.png",
+    booked:[7,14,21,28],
+    className:"ixy31s"
+  },
+
+  {
+    id:4,
+    name:"Canon IXY 510IS",
+    image:"/images/ixy510is.png",
+    booked:[3,8,18,25],
+    className:"ixy510is"
+  },
+
+  {
+    id:5,
+    name:"Canon IXY 930IS",
+    image:"/images/ixy930is.png",
+    booked:[3,8,18,25],
+    className:"ixy930is"
+  },
+
+  {
+    id:6,
+    name:"Canon IXY 920IS",
+    image:"/images/ixy920is.jpg",
+    booked:[3,8,18,25],
+    className:"ixy920is"
+  },
+
+  {
+    id:7,
+    name:"Canon Powershot A800",
+    image:"/images/a800.jpg",
+    booked:[3,8,18,25],
+    className:"a800"
+  },
+]
+
+
+export default cameras
