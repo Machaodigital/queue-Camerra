@@ -554,7 +554,7 @@ border-radius:30px;
   }
 
   .calendar-box {
-    width: 100%;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    width: 80%;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
     padding: 16px;
     border-radius: 20px;
   }
@@ -645,7 +645,7 @@ border-radius:30px;
 
 .camera-card img {
   width: 100%;
-  max-width: 220px;
+  max-width: 2px;
   height: 180px;
   object-fit: cover;
   border-radius: 20px;

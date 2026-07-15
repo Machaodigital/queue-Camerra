@@ -69,7 +69,7 @@ function Calendar({ camera }) {
         <div>🔴 ไม่ว่าง</div>
       </div>
 
-      <h3>{camera.name}</h3>
+      <h3>{"ทักแชทเพื่อสอบถามเพิ่มเติม"}</h3>
 
       <div className="week">
         <div>อา</div>
