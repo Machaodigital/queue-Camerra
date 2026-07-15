@@ -6,7 +6,7 @@ return(
 <div>
 
 <h2 className="title">
-เลือกกล้องที่ต้องการ Check Queue 📸
+「 ✦📢เลือกกล้องที่ต้องการ Check Queue 📸✦ 」
 </h2>
 
 
@@ -24,6 +24,7 @@ key={camera.id}
 
 <img 
 src={camera.image}
+className={camera.className}
 />
 
 
@@ -41,7 +42,7 @@ onSelect(camera)
 
 }}
 >
-เช็คคิว
+⤷เช็คคิว
 </button>
 
 

@@ -1,429 +1,187 @@
-body{
-
-font-family:"Noto Sans Thai", sans-serif;
-
-background:#fff8fc;
-
-margin:0;
-
-background:#fff0f5;
-
-padding:20px;
-
-text-align:center;
-
-color:#444;
-
-font-weight:300;
-
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+  background: #fff0f5;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #444;
+  font-weight: 300;
 }
 
-
-/* ส่วนโลโก้และชื่อร้าน */
-
-.header{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:15px;
-
-padding:15px;
-
-background:white;
-
+/* ===== ส่วนโลโก้และชื่อร้าน ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 25px;
+  background: linear-gradient(135deg, #fff, #ffeaf5);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(255,120,180,.15);
 }
 
-
-.logo{
-
-width:90px;
-
-height:90px;
-
-object-fit:cover;
-
-border-radius:50%;
-
+.logo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-
-.shop-name h1{
-
-font-size:32px;
-
-margin:0;
-
-font-weight:400;
-
-letter-spacing:2px;
-
+.shop-name h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
-
-.shop-name p{
-
-font-size:20px;
-
-margin:5px 0 0;
-
-color:#777;
-
+.shop-name p {
+  font-size: 20px;
+  margin: 5px 0 0;
+  color: #777;
 }
 
-
-/* การ์ดกล้อง */
-
-.camera-card{
-
-display:inline-block;
-
-background:white;
-
-width:250px;
-
-padding:20px;
-
-margin:15px;
-
-border-radius:20px;
-
-text-align:center;
-
+/* ===== ปุ่ม ===== */
+button {
+  background: linear-gradient(135deg, #ff78b5, #ff5ea8);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
 }
 
-
-.camera-card img{
-
-width:200px;
-
-height:150px;
-
-object-fit:cover;
-
+button:hover {
+  transform: scale(1.05);
 }
 
-
-/* ปุ่ม */
-
-button{
-
-background:linear-gradient(
-135deg,
-#ff78b5,
-#ff5ea8
-);
-
-color:white;
-
-border:none;
-
-padding:10px 30px;
-
-border-radius:30px;
-
-font-size:16px;
-
-cursor:pointer;
-
-transition:.3s;
-
+/* ===== รายการกล้อง ===== */
+.title {
+  text-align: center;
+  margin-top: 30px;
 }
 
-button:hover{
-
-transform:scale(1.05);
-
+.camera-list {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  justify-content: center;
+  gap: 20px;    /* เดิม gap:px; ← ไม่มีตัวเลข ผิด syntax ใช้งานไม่ได้ แก้เป็น 20px */
 }
 
-
-/* ปฏิทิน */
-
-.calendar{
-
-display:grid;
-
-grid-template-columns:repeat(7,60px);
-
-gap:10px;
-
-justify-content:center;
-
+/* ถ้ามีกล้องจำนวนคี่ ใบสุดท้ายจะขยายเต็มแถวและอยู่กึ่งกลาง */
+.camera-card:last-child {
+  grid-column: 1 / 3;
+  justify-self: center;
 }
 
-
-.day{
-
-height:60px;
-
-border-radius:15px;
-
-background:white;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
+.camera-card {
+  background: white;
+  width: 250px;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255,120,180,.15);
+  transition: .3s;
 }
 
-
-.free{
-
-background:#baffba;
-
+.camera-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255,120,180,.25);
 }
 
-
-.booked{
-
-background:#ffaaaa;
-
+.camera-card img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin: auto;
 }
 
-.title{
-
-text-align:center;
-
-margin-top:30px;
-
+/* เดิม .ixy31s ถูกซ้อนผิดที่อยู่ข้างใน .camera-card img{} (invalid CSS)
+   และมีค่า width:30000px; height:2000px ซึ่งจะทำให้รูปนี้ใหญ่จนพังหน้าเว็บ
+   ดึงออกมาเป็นกฎแยก และแก้ขนาดให้เท่ารูปกล้องตัวอื่น */
+.ixy31s {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
 }
 
-
-.camera-list{
-
-display:grid;
-
-grid-template-columns:repeat(2,250px);
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:50px;
-
+.camera-card h3 {
+  text-align: center;
 }
 
-.camera-card:last-child{
-
-grid-column:1 / 3;
-
-justify-self:center;
-
+/* ===== ปฏิทิน ===== */
+.calendar-box {
+  background: white;
+  padding: 25px;
+  margin: 30px auto;
+  width: max-content;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(255,120,180,.15);
+  text-align: center;
 }
 
-.camera-card{
-
-background:white;
-
-width:250px;
-
-padding:20px;
-
-border-radius:25px;
-
-box-shadow:
-0 10px 25px rgba(255,120,180,.15);
-
-transition:.3s;
-
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
-.camera-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-0 15px 35px rgba(255,120,180,.25);
-
+.calendar-header h2 {
+  margin: 0;
 }
 
-
-.camera-card img{
-
-width:220px;
-
-height:160px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-display:block;
-
-margin:auto;
-
-.ixy31s{
-
-width:30000px;
-
-height:2000px;
-
-object-fit:contain;
-
+.calendar-header button {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-
-.camera-card h3{
-
-text-align:center;
-
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  gap: 10px;
+  justify-content: center;
 }
 
-.calendar-box{
-
-background:white;
-
-padding:25px;
-
-margin:30px auto;
-
-width:max-content;
-
-border-radius:30px;
-
-box-shadow:
-0 15px 40px rgba(255,120,180,.15);
-
-
-text-align:center;
-
+.day {
+  height: 70px;
+  border-radius: 15px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
-.week{
-
-display:grid;
-
-grid-template-columns:repeat(7,70px);
-
-gap:10px;
-
-font-weight:bold;
-
-margin-bottom:10px;
-
+.free {
+  background: #c9ffc9;
 }
 
-
-
-.calendar{
-
-display:grid;
-
-grid-template-columns:repeat(7,70px);
-
-gap:10px;
-
+.booked {
+  background: #ffc1c1;
 }
 
-
-
-.day{
-
-height:70px;
-
-border-radius:15px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  font-size: 16px;
 }
-
-
-
-.free{
-
-background:#c9ffc9;
-
-}
-
-
-
-.booked{
-
-background:#ffc1c1;
-
-}
-
-.calendar-header{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:30px;
-
-}
-
-
-.calendar-header button{
-
-font-size:18px;
-
-width:40px;
-
-height:40px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-padding:0;
-
-}
-
-.calendar-header h2{
-
-margin:0;
-
-}
-
-.legend{
-
-display:flex;
-
-justify-content:center;
-
-gap:30px;
-
-margin-top:20px;
-
-font-size:16px;
-
-}
-
-.header{
-
-
-}
-
-
-
-.logo{
-
-width:90px;
-
-height:90px;
-
-}
-
