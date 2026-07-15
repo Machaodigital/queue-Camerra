@@ -3,7 +3,7 @@ const cameras = [
     id:1,
     name:"Canon IXY 10S",
     image:"/images/ixy10s.png",
-    booked:[5,10,15,20],
+    booked:["2026-07-15"],
     className:"ixy10s"
   },
 
@@ -11,7 +11,7 @@ const cameras = [
     id:2,
     name:"Canon IXY 30S",
     image:"/images/ixy30s.png",
-    booked:[3,8,18,25],
+    booked:["2026-07-15","2026-07-16","2026-07-17","2026-07-18","2026-07-24","2026-07-27","2026-07-28"],
     className:"ixy30s"
   },
 
