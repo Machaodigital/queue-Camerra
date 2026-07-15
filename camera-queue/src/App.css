@@ -22,7 +22,7 @@ box-sizing:border-box;
 
 .card{
 
-width:900px;
+width:800px;
 
 max-width:100%;
 
@@ -597,35 +597,6 @@ border-radius:30px;
 /* จอเล็กมาก เช่น iPhone SE */
 @media (max-width: 380px) {
 
-  .title {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  .camera-list {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    justify-items: center;   /* เพิ่ม: บังคับให้การ์ดอยู่กึ่งกลางแนวนอน */
-  }
-
-  .camera-card {
-    width: 100%;
-    max-width: 260px;         /* เพิ่ม: จำกัดไม่ให้การ์ดกว้างเต็มจอเกินไป */
-    padding: 14px;
-    border-radius: 18px;
-    margin: 0 auto;           /* เพิ่ม: กึ่งกลางตัวเอง */
-  }
-
-  .camera-card img {
-    max-width: 100%;
-    height: 120px;            /* ลดจาก 160px */
-  }
-
-  .camera-card h3 {
-    font-size: 15px;
-  }
-}
-
   .day {
     height: 34px;
     font-size: 11px;
@@ -638,3 +609,104 @@ border-radius:30px;
   .hero-text h1 {
     font-size: 22px;
   }
+}
+
+/* ===================================================== */
+/* ===== CAMERA LIST / CAMERA CARD ===== */
+/* ===================================================== */
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  color: #ff6fae;
+  margin-bottom: 25px;
+}
+
+.camera-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.camera-card {
+  background: #fff7fb;
+  border: 1px solid #ffe1ef;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255,150,200,.12);
+  transition: .2s;
+}
+
+.camera-card:hover {
+  transform: translateY(-4px);
+}
+
+.camera-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.camera-card h3 {
+  font-size: 18px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.camera-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background: #ff78b5;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.camera-card button:hover {
+  background: #ff5ea8;
+}
+
+/* มือถือ (นี่คือส่วนที่ก่อนหน้าไปอยู่ผิดที่ใน 380px) */
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .camera-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-items: center;
+  }
+
+  .camera-card {
+    width: 100%;
+    max-width: 220px;
+    padding: 12px;
+    border-radius: 18px;
+    margin: 0 auto;
+  }
+
+  .camera-card img {
+    max-width: 100%;
+    height: 100px;
+  }
+
+  .camera-card h3 {
+    font-size: 14px;
+  }
+
+  .camera-card button {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
