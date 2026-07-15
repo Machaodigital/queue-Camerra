@@ -495,3 +495,118 @@ width:300px;
 border-radius:30px;
 
 }
+/* ===================================================== */
+/* ===== MOBILE RESPONSIVE (เพิ่มต่อท้ายไฟล์ App.css) ===== */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  .page {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .shop-name h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .shop-name p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;   /* เดิมเรียงข้างกัน (row) → มือถือเรียงต่อกัน (column) */
+    padding: 20px;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .camera-image {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+  }
+
+  .calendar-box {
+    width: 100%;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .calendar-header h2 {
+    font-size: 18px;
+  }
+
+  .calendar-header {
+    gap: 12px;
+  }
+
+  .day {
+    height: 40px;         /* เดิม 55px ใหญ่เกินไปสำหรับจอแคบ */
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .week {
+    font-size: 11px;
+  }
+
+  .legend {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .line-btn {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .theme-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
+
+/* จอเล็กมาก เช่น iPhone SE */
+@media (max-width: 380px) {
+
+  .day {
+    height: 34px;
+    font-size: 11px;
+  }
+
+  .shop-name h1 {
+    font-size: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+}
