@@ -597,6 +597,35 @@ border-radius:30px;
 /* จอเล็กมาก เช่น iPhone SE */
 @media (max-width: 380px) {
 
+  .title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .camera-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-items: center;   /* เพิ่ม: บังคับให้การ์ดอยู่กึ่งกลางแนวนอน */
+  }
+
+  .camera-card {
+    width: 100%;
+    max-width: 260px;         /* เพิ่ม: จำกัดไม่ให้การ์ดกว้างเต็มจอเกินไป */
+    padding: 14px;
+    border-radius: 18px;
+    margin: 0 auto;           /* เพิ่ม: กึ่งกลางตัวเอง */
+  }
+
+  .camera-card img {
+    max-width: 100%;
+    height: 120px;            /* ลดจาก 160px */
+  }
+
+  .camera-card h3 {
+    font-size: 15px;
+  }
+}
+
   .day {
     height: 34px;
     font-size: 11px;
@@ -609,4 +638,3 @@ border-radius:30px;
   .hero-text h1 {
     font-size: 22px;
   }
-}
