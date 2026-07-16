@@ -554,7 +554,7 @@ border-radius:30px;
   }
 
   .calendar-box {
-    width: 80%;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    width: max-content;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
     padding: 16px;
     border-radius: 20px;
   }
@@ -575,6 +575,8 @@ border-radius:30px;
 
   .week {
     font-size: 11px;
+    gap: 5px;
+
   }
 
   .legend {
@@ -690,7 +692,7 @@ border-radius:30px;
 
   .camera-card {
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
     padding: 12px;
     border-radius: 18px;
     margin: 0 auto;
