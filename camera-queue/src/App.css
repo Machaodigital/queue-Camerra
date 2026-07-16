@@ -555,13 +555,14 @@ border-radius:30px;
 
   .calendar-box {
     width: 100%;
-    max-width: 400px;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    max-width: 340px;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    margin: 30px auto;
     padding: 16px;
     border-radius: 20px;
   }
 
   .calendar-header h2 {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .calendar-header {
