@@ -76,6 +76,7 @@ button:hover {
 }
 
 .camera-card {
+  box-sizing: border-box;
   background: white;
   width: 250px;
   padding: 20px;
@@ -92,9 +93,9 @@ button:hover {
 }
 
 .camera-card img {
-  width: 220px;
-  height: 160px;
-  object-fit: cover;
+  width: 160px;
+  height: 120px;
+  object-fit: contain;
   border-radius: 20px;
   display: block;
   margin: auto;
@@ -104,9 +105,9 @@ button:hover {
    และมีค่า width:30000px; height:2000px ซึ่งจะทำให้รูปนี้ใหญ่จนพังหน้าเว็บ
    ดึงออกมาเป็นกฎแยก และแก้ขนาดให้เท่ารูปกล้องตัวอื่น */
 .ixy31s {
-  width: 220px;
-  height: 160px;
-  object-fit: cover;
+  width: 160px;
+  height: 120px;
+  object-fit: contain;
 }
 
 .camera-card h3 {
