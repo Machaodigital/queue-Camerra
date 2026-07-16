@@ -554,7 +554,8 @@ border-radius:30px;
   }
 
   .calendar-box {
-    width: max-content;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    width: 100%;
+    max-width: 400px;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
     padding: 16px;
     border-radius: 20px;
   }
