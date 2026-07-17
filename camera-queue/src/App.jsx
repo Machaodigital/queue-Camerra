@@ -75,7 +75,9 @@ function App() {
 
         {selected && (
           <div ref={calendarRef}>
-            <h2>เจอแล้ว</h2>
+            <h2 className="calendar-title">
+              ตารางคิว {selected.name}
+            </h2>
 
             <Calendar camera={selected} />
           </div>
