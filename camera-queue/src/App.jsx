@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import Header from "./components/Header";
 import CameraList from "./components/CameraList";
 import Calendar from "./components/Calendar";
+import "./App.css";
 
 import camerasData from "./data/cameraData";
 import { getBookings } from "./data/sheetBookings";
