@@ -57,6 +57,7 @@ function App() {
     setTimeout(() => {
       calendarRef.current?.scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
     }, 100);
   }
@@ -75,7 +76,7 @@ function App() {
 
         {selected && (
           <div ref={calendarRef}>
-            <h2 className="calendar-title">
+            <h2 className="calendar-section">
               ตารางคิว {selected.name}
             </h2>
 

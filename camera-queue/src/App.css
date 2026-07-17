@@ -157,7 +157,7 @@ margin-bottom:20px;
 
 .calendar-box{
 
-width:420px;
+width:100%;
 
 max-width:100%;
 
@@ -165,9 +165,9 @@ background:#fff;
 
 border:1px solid #ffe1ef;
 
-border-radius:30px;
+border-radius:20px;
 
-padding:30px;
+padding:16px;
 
 margin:30px auto;
 
@@ -558,7 +558,7 @@ border-radius:30px;
 
   .calendar-box {
     width: 100%;
-    max-width: 340px;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
+    max-width: 520px;         /* เดิม width:420px ตายตัว → ยืดเต็มความกว้างจอ */
     margin: 30px auto;
     padding: 16px;
     border-radius: 20px;
@@ -730,5 +730,37 @@ border-radius:30px;
   .camera-card button {
     padding: 10px;
     font-size: 13px;
+  }
+}
+.calendar-title{
+  width:100%;
+  text-align:center;
+  color:#ff6fae;
+  font-size:28px;
+  font-weight:700;
+  margin:35px 0 20px;
+}
+.calendar-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .calendar-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .calendar-box {
+    width: calc(100% - 8px);
+    max-width: 390px;
+    margin: 30px auto;
+    padding: 16px 12px;
   }
 }
