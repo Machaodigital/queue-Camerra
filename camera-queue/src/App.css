@@ -738,29 +738,35 @@ border-radius:30px;
   color:#ff6fae;
   font-size:28px;
   font-weight:700;
-  margin:35px 0 20px;
+  margin:0 0 20px;
 }
 .calendar-section{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  width: 100%;
+  margin-top: 35px;
+  scroll-margin-top: 16px;
 }
 @media (max-width: 768px) {
+  .page {
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
   .card {
     width: 100%;
-    max-width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 20px 16px;
   }
 
   .calendar-section {
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: block;
   }
 
   .calendar-box {
-    width: calc(100% - 8px);
-    max-width: 390px;
-    margin: 30px auto;
-    padding: 16px 12px;
+    width: 100%;
+    max-width: 100%; /* เท่าการ์ดกล้องใบสุดท้าย */
+    margin:0 auto;
+    box-sizing: border-box;
   }
 }

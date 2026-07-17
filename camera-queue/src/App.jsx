@@ -57,7 +57,7 @@ function App() {
     setTimeout(() => {
       calendarRef.current?.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
       });
     }, 100);
   }
@@ -75,14 +75,15 @@ function App() {
         />
 
         {selected && (
-          <div ref={calendarRef}>
-            <h2 className="calendar-section">
-              ตารางคิว {selected.name}
-            </h2>
+         <section ref={calendarRef} className="calendar-section">
+          <h2 className="calendar-title">
+            ตารางคิว {selected.name}
+          </h2>
 
-            <Calendar camera={selected} />
-          </div>
-        )}
+          <Calendar camera={selected} />
+        </section>
+      )}
+        
       </div>
     </div>
   );
