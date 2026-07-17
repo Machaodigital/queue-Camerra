@@ -12,6 +12,8 @@
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.21",
     "@fullcalendar/react": "^6.1.21",
+    "firebase": "^12.16.0",
+    "papaparse": "^5.5.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },

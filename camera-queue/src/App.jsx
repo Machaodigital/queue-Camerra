@@ -1,84 +1,88 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react";
 
-import Header from "./components/Header"
-import CameraList from "./components/CameraList"
-import Calendar from "./components/Calendar"
+import Header from "./components/Header";
+import CameraList from "./components/CameraList";
+import Calendar from "./components/Calendar";
 
-import cameras from "./data/cameraData"
+import camerasData from "./data/cameraData";
+import { getBookings } from "./data/sheetBookings";
 
-import Hero from "./components/Hero"
+import Hero from "./components/Hero";
 
+function App() {
+  const [cameras, setCameras] = useState(camerasData);
+  const [selected, setSelected] = useState(null);
 
-function App(){
+  const calendarRef = useRef(null);
 
-  const [selected,setSelected] = useState(null)
+  useEffect(() => {
+    async function loadBookings() {
+      const rows = await getBookings();
 
-  const calendarRef = useRef(null)
+      const updatedCameras = camerasData.map((camera) => {
+        let bookedDates = [];
 
+        rows.forEach((row) => {
+          if (row.Camera === camera.name) {
+            const start = new Date(row.StartDate);
+            const end = new Date(row.EndDate);
 
+            const current = new Date(start);
 
+            while (current <= end) {
+              bookedDates.push(
+                current.toISOString().split("T")[0]
+              );
 
+              current.setDate(current.getDate() + 1);
+            }
+          }
+        });
 
+        return {
+          ...camera,
+          booked: bookedDates,
+        };
+      });
 
-function selectCamera(camera){
+      setCameras(updatedCameras);
+    }
 
-setSelected(camera)
+    loadBookings();
+  }, []);
 
-console.log("App ได้รับ:",camera)
+  function selectCamera(camera) {
+    setSelected(camera);
 
-setTimeout(()=>{
+    setTimeout(() => {
+      calendarRef.current?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }
 
-calendarRef.current?.scrollIntoView({
-
-behavior:"smooth"
-
-})
-
-},100)
-
-}
-
-
-  return(
-
+  return (
     <div className="page">
+      <div className="card">
+        <Header />
 
-    <div className="card">
+        <Hero />
 
-      <Header/>
+        <CameraList
+          cameras={cameras}
+          onSelect={selectCamera}
+        />
 
-<Hero/>
+        {selected && (
+          <div ref={calendarRef}>
+            <h2>เจอแล้ว</h2>
 
-      <CameraList
-
-        cameras={cameras}
-
-        onSelect={selectCamera}
-
-      />
-
-
-      {
-        selected &&
-
-        <div ref={calendarRef}>
-
-        <h2>เจอแล้ว</h2>
-
-        <Calendar camera={selected}/>
-
-        </div>
-      }
-
-
+            <Calendar camera={selected} />
+          </div>
+        )}
+      </div>
     </div>
-
-    </div>
-
-
-  )
-
+  );
 }
 
-
-export default App
+export default App;

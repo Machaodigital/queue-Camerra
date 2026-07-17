@@ -3,7 +3,7 @@ const cameras = [
     id:1,
     name:"Canon IXY 10S",
     image:"/images/ixy10s.png",
-    booked:["2026-07-15"],
+    booked:[],
     className:"ixy10s"
   },
 
@@ -11,7 +11,7 @@ const cameras = [
     id:2,
     name:"Canon IXY 30S",
     image:"/images/ixy30s.png",
-    booked:["2026-07-15","2026-07-16","2026-07-17","2026-07-18","2026-07-24","2026-07-27","2026-07-28"],
+    booked:[],
     className:"ixy30s"
   },
 
@@ -19,7 +19,7 @@ const cameras = [
     id:3,
     name:"Canon IXY 31S",
     image:"/images/ixy31s.png",
-    booked:["2026-07-16"],
+    booked:[],
     className:"ixy31s"
   },
 
@@ -27,7 +27,7 @@ const cameras = [
     id:4,
     name:"Canon IXY 510IS",
     image:"/images/ixy510is.png",
-    booked:["2026-07-16"],
+    booked:[],
     className:"ixy510is"
   },
 
@@ -35,7 +35,7 @@ const cameras = [
     id:5,
     name:"Canon IXY 930IS",
     image:"/images/ixy930is.png",
-    booked:["2026-07-16"],
+    booked:[],
     className:"ixy930is"
   },
 
@@ -43,7 +43,7 @@ const cameras = [
     id:6,
     name:"Canon IXY 920IS",
     image:"/images/ixy920is.jpg",
-    booked:["2026-07-16"],
+    booked:[],
     className:"ixy920is"
   },
 
@@ -51,7 +51,7 @@ const cameras = [
     id:7,
     name:"Canon Powershot A800",
     image:"/images/a800.jpg",
-    booked:["2026-07-16"],
+    booked:[],
     className:"a800"
   },
 ]
