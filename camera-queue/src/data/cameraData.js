@@ -57,12 +57,28 @@ const cameras = [
 
   {
     id:8,
+    name:"Canon IXY 910is",
+    image:"/images/ixy910is.png",
+    booked:[],
+    className:"ixy910is"
+  },
+
+  {
+    id:9,
+    name:"Canon IXUS 105",
+    image:"/images/ixus105.png",
+    booked:[],
+    className:"ixus105"
+  },
+
+
+  {
+    id:10,
     name:"Canon Powershot A800",
     image:"/images/A800.png",
     booked:[],
     className:"a800"
   },
-
   
 ]
 
