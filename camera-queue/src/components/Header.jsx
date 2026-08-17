@@ -13,7 +13,7 @@ className="logo"
 <div className="shop-name">
 
 <h1>
-𝐌𝐚𝐜𝐡𝐚𝐨 𝐃𝐢𝐠𝐢𝐭𝐚𝐥｡𖦹°‧
+MACHAO DIGITAL｡𖦹°‧
 </h1>
 
 <p>
