@@ -412,4 +412,70 @@ button:hover,
     max-width: 100% !important;
   }
 }
+
+/* ===== CAMERA GRID FIX ===== */
+
+.camera-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+.camera-list .camera-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.camera-list .camera-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 110px !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+}
+
+.camera-list .camera-card h3 {
+  width: 100% !important;
+  overflow-wrap: anywhere !important;
+  text-align: center !important;
+}
+
+.camera-list .camera-card button {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* มือถือก็ยัง 2 ใบต่อแถว */
+@media (max-width: 640px) {
+  .camera-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  .camera-list .camera-card {
+    padding: 10px !important;
+  }
+
+  .camera-list .camera-card img {
+    height: 105px !important;
+  }
+
+  .camera-list .camera-card h3 {
+    font-size: 13px !important;
+    min-height: 42px !important;
+    margin: 10px 0 !important;
+  }
+
+  .camera-list .camera-card button {
+    padding: 9px 4px !important;
+    font-size: 12px !important;
+  }
+}
 }
