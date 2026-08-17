@@ -340,11 +340,12 @@ button,
   .week { font-size: 11px; }
   .day { min-height: 42px; border-radius: 10px; font-size: 11px; }
   .legend { gap: 10px; font-size: 12px; }
+}
 
 
-  .hero::before,
+.hero::before,
 .hero::after {
-  content: none;
+  content: none; 
 }
 
 .card,
@@ -486,5 +487,4 @@ button,
     padding: 9px 4px !important;
     font-size: 12px !important;
   }
-}
 }
