@@ -2,8 +2,9 @@ import { useState } from "react"
 
 function Calendar({ camera }) {
 
-  const [month, setMonth] = useState(6) // 0-indexed: 6 = กรกฎาคม
-  const [year, setYear] = useState(2026)
+  // เริ่มที่เดือนและปีปัจจุบันของอุปกรณ์ผู้ใช้
+  const [month, setMonth] = useState(() => new Date().getMonth())
+  const [year, setYear] = useState(() => new Date().getFullYear())
 
   const monthName = [
     "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
