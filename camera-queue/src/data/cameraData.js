@@ -57,7 +57,7 @@ const cameras = [
 
   {
     id:8,
-    name:"Canon IXY 910is",
+    name:"Canon IXY 910IS",
     image:"/images/ixy910is.png",
     booked:[],
     className:"ixy910is"
