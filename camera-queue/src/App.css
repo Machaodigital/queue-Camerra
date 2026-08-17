@@ -148,11 +148,6 @@
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.camera-card:hover {
-  border-color: #b84878;
-  box-shadow: 6px 8px 0 rgba(176, 68, 118, .32);
-  transform: translate(-2px, -3px);
-}
 
 .camera-card img {
   width: 100%;
@@ -197,13 +192,26 @@ button,
   font-size: 14px;
 }
 
-button:hover,
-.line-btn:hover {
-  box-shadow: 5px 5px 0 rgba(128, 48, 88, .32);
-  filter: saturate(1.08);
-  transform: translate(-2px, -2px);
+@media (hover: hover) and (pointer: fine) {
+  .camera-card:hover {
+    border-color: #b84878;
+    box-shadow: 6px 8px 0 rgba(176, 68, 118, .32);
+    transform: translate(-2px, -3px);
+  }
+
+  button:hover,
+  .line-btn:hover {
+    box-shadow: 5px 5px 0 rgba(128, 48, 88, .32);
+    filter: saturate(1.08);
+    transform: translate(-2px, -2px);
+  }
 }
 
+.camera-card,
+button,
+.line-btn {
+  -webkit-tap-highlight-color: transparent;
+}
 .calendar-section {
   width: min(800px, 100%);
   margin: 44px auto 0;
