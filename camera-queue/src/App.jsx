@@ -32,21 +32,20 @@ function App() {
         let notes = {};
 
         rows.forEach((row) => {
-          // แถวหมายเหตุ
+          // หมายเหตุ (แถวเดียวกันอาจเป็นคิวจองด้วย จึงไม่ return)
           if (row.NoteDate && row.Note) {
             const key = toYMD(row.NoteDate);
-            if (!key) return;
-
-            if (row.Camera === camera.name) {
-              notes[key] = row.Note;
-            } else if (!row.Camera && !notes[key]) {
-              notes[key] = row.Note;
+            if (key) {
+              if (row.Camera === camera.name) {
+                notes[key] = row.Note;
+              } else if (!row.Camera && !notes[key]) {
+                notes[key] = row.Note;
+              }
             }
-            return;
           }
 
-          // แถวคิวจอง
-          if (row.Camera === camera.name) {
+          // คิวจอง
+          if (row.Camera === camera.name && row.StartDate && row.EndDate) {
             const start = new Date(row.StartDate);
             const end = new Date(row.EndDate);
             if (isNaN(start) || isNaN(end)) return;
