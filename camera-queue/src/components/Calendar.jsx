@@ -54,6 +54,10 @@ function Calendar({ camera }) {
     return camera.booked.includes(toDateString(day))
   }
 
+  function isReturnDay(day) {
+  return camera.endDates?.includes(toDateString(day))
+}
+
   return (
     <div className="calendar-box">
 
@@ -95,6 +99,12 @@ function Calendar({ camera }) {
             >
               <b>{day}</b>
               <span>{isBooked(day) ? "🔴" : "🟢"}</span>
+              {isReturnDay(day) && (
+                <small className="day-note">
+                  <span className="note-full">📢 14:00 เป็นต้นไป🫶🏻</span>
+                  <span className="note-short">📢14:00+</span>
+                </small>
+              )}
             </div>
           ))
         }

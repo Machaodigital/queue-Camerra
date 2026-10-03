@@ -494,3 +494,21 @@ button,
   background: #fff8f4 !important;
   box-shadow: 3px 4px 0 rgba(220, 123, 165, 0.22) !important;
 }
+
+.day-note {
+  display: block;
+  font-family: "Itim", "Noto Sans Thai", sans-serif;
+  font-size: 0.65rem;
+  line-height: 1.25;
+  margin-top: 2px;
+  color: #e0678a;
+  text-align: center;
+}
+
+.note-short { display: none; }
+
+@media (max-width: 640px) {
+  .note-full { display: none; }
+  .note-short { display: inline; }
+  .day-note { font-size: 0.55rem; }
+}

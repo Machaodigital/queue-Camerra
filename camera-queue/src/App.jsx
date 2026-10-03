@@ -22,19 +22,18 @@ function App() {
 
       const updatedCameras = camerasData.map((camera) => {
         let bookedDates = [];
+        let endDates = [];
 
         rows.forEach((row) => {
           if (row.Camera === camera.name) {
             const start = new Date(row.StartDate);
             const end = new Date(row.EndDate);
 
+            endDates.push(end.toISOString().split("T")[0]);
+
             const current = new Date(start);
-
             while (current <= end) {
-              bookedDates.push(
-                current.toISOString().split("T")[0]
-              );
-
+              bookedDates.push(current.toISOString().split("T")[0]);
               current.setDate(current.getDate() + 1);
             }
           }
@@ -43,6 +42,7 @@ function App() {
         return {
           ...camera,
           booked: bookedDates,
+          endDates,
         };
       });
 
@@ -76,15 +76,14 @@ function App() {
         />
 
         {selected && (
-         <section ref={calendarRef} className="calendar-section">
-          <h2 className="calendar-title">
-            ตารางคิว {selected.name}
-          </h2>
+          <section ref={calendarRef} className="calendar-section">
+            <h2 className="calendar-title">
+              ตารางคิว {selected.name}
+            </h2>
 
-          <Calendar camera={selected} />
-        </section>
-      )}
-        
+            <Calendar camera={selected} />
+          </section>
+        )}
       </div>
     </div>
   );
