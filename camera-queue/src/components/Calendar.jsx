@@ -42,21 +42,21 @@ function Calendar({ camera }) {
   }
 
   // แปลงวันในปฏิทิน (day) ให้เป็น "YYYY-MM-DD" ตาม month/year ที่กำลังดูอยู่
-  // ต้องมีฟังก์ชันนี้ ไม่งั้นจะเทียบเลขวันกับ string เต็มไม่ได้เลย
   function toDateString(day) {
     const mm = String(month + 1).padStart(2, "0")
     const dd = String(day).padStart(2, "0")
     return `${year}-${mm}-${dd}`
   }
 
-  // เช็คว่าวันนี้ถูกจองหรือยัง โดยเทียบวันที่เต็ม ไม่ใช่แค่เลขวัน
+  // เช็คว่าวันนี้ถูกจองหรือยัง
   function isBooked(day) {
     return camera.booked.includes(toDateString(day))
   }
 
-  function isReturnDay(day) {
-  return camera.endDates?.includes(toDateString(day))
-}
+  // หมายเหตุของวันนั้น (มาจาก Sheet)
+  function getNote(day) {
+    return camera.notes?.[toDateString(day)]
+  }
 
   return (
     <div className="calendar-box">
@@ -99,11 +99,8 @@ function Calendar({ camera }) {
             >
               <b>{day}</b>
               <span>{isBooked(day) ? "🔴" : "🟢"}</span>
-              {isReturnDay(day) && (
-                <small className="day-note">
-                  <span className="note-full">📢 14:00 เป็นต้นไป🫶🏻</span>
-                  <span className="note-short">📢14:00+</span>
-                </small>
+              {getNote(day) && (
+                <small className="day-note">{getNote(day)}</small>
               )}
             </div>
           ))

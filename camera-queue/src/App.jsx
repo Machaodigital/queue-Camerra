@@ -10,6 +10,13 @@ import { getBookings } from "./data/sheetBookings";
 
 import Hero from "./components/Hero";
 
+// แปลงค่าวันที่จากชีตเป็น "YYYY-MM-DD" (ถ้าอ่านไม่ได้ จะคืนค่า null)
+function toYMD(value) {
+  const d = new Date(value);
+  if (isNaN(d)) return null;
+  return d.toISOString().split("T")[0];
+}
+
 function App() {
   const [cameras, setCameras] = useState(camerasData);
   const [selected, setSelected] = useState(null);
@@ -22,14 +29,27 @@ function App() {
 
       const updatedCameras = camerasData.map((camera) => {
         let bookedDates = [];
-        let endDates = [];
+        let notes = {};
 
         rows.forEach((row) => {
+          // แถวหมายเหตุ
+          if (row.NoteDate && row.Note) {
+            const key = toYMD(row.NoteDate);
+            if (!key) return;
+
+            if (row.Camera === camera.name) {
+              notes[key] = row.Note;
+            } else if (!row.Camera && !notes[key]) {
+              notes[key] = row.Note;
+            }
+            return;
+          }
+
+          // แถวคิวจอง
           if (row.Camera === camera.name) {
             const start = new Date(row.StartDate);
             const end = new Date(row.EndDate);
-
-            endDates.push(end.toISOString().split("T")[0]);
+            if (isNaN(start) || isNaN(end)) return;
 
             const current = new Date(start);
             while (current <= end) {
@@ -42,7 +62,7 @@ function App() {
         return {
           ...camera,
           booked: bookedDates,
-          endDates,
+          notes,
         };
       });
 
@@ -63,6 +83,11 @@ function App() {
     }, 100);
   }
 
+  // ใช้ข้อมูลกล้องล่าสุดเสมอ (กันกรณีข้อมูลจากชีตโหลดเสร็จหลังกดเลือก)
+  const selectedCamera = selected
+    ? cameras.find((c) => c.id === selected.id) ?? selected
+    : null;
+
   return (
     <div className="page">
       <div className="card">
@@ -75,13 +100,13 @@ function App() {
           onSelect={selectCamera}
         />
 
-        {selected && (
+        {selectedCamera && (
           <section ref={calendarRef} className="calendar-section">
             <h2 className="calendar-title">
-              ตารางคิว {selected.name}
+              ตารางคิว {selectedCamera.name}
             </h2>
 
-            <Calendar camera={selected} />
+            <Calendar camera={selectedCamera} />
           </section>
         )}
       </div>
